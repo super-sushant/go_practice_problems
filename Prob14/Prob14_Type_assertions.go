@@ -26,6 +26,19 @@ func (message sms) getCost() float64 {
 // type assert to return to also print emailaddress and phoneNumber
 func getExpense(e expense) {
 	fmt.Println(e.getCost())
+	
+	email, isEmail := e.(email)
+
+	if(isEmail){ 
+		fmt.Printf("Hi your email is %v \n",email.toAddress)
+	}
+
+	sms, isSms:= e.(sms)
+
+	if isSms {
+		fmt.Printf("Hi your mobile number is  '%d' \n",sms.toPhoneNumber)
+	}
+
 }
 
 func main() {
