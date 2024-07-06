@@ -3,7 +3,7 @@ package main
 import "fmt"
 
 func main () {
-	firstname, lastname := getNames()
+	firstname, _ := getNames()
 
 	fmt.Printf("Hi %v ass boi",firstname)
 
