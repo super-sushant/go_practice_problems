@@ -7,6 +7,6 @@ func main (){
 	const openRate = 30.5
 
 	// msg := "Hi Ryan Gosling, your open rate is 30.50 percent"
-	msg := fmt.Sprintf("Hi %d, your open rate is %d percent",main,openRate)
+	msg := fmt.Sprintf("Hi %v, your open rate is %.2f percent",main,openRate)
 	fmt.Println(msg)
 }
