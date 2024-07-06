@@ -3,7 +3,8 @@ package main
 import "fmt"
 
 type messageToSend struct {
-
+	message string
+	phoneNumber int
 }
 
 func sendMessage(message messageToSend){
