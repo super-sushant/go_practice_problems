@@ -5,29 +5,29 @@ import (
 )
 
 // create matrix where ele = i*j
-func createMatrix(rows,cols int) ([][]int) {
-	
-	mat:= make([][]int,rows)
+func createMatrix(rows, cols int) [][]int {
 
-	for i:=0; i<rows;i++ {
+	mat := make([][]int, rows)
+
+	for i, row := range mat {
 		// make empty slice
-		row:=make([]int, cols)
+		row = make([]int, cols)
 
-		for j:=0; j<cols; j++ {
+		for j := range row {
 			// append in slice
-			row[j]= i*j
+			row[j] = i * j
 		}
 
-		mat[i]= row
+		mat[i] = row
 	}
 
 	return mat
-	
+
 }
 
-func main(){
+func main() {
 
-	mat:=createMatrix(7,7)
+	mat := createMatrix(7, 7)
 
 	fmt.Println(mat)
 }
