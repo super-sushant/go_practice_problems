@@ -7,18 +7,18 @@ import (
 // create matrix where ele = i*j
 func createMatrix(rows,cols int) ([][]int) {
 	
-	mat:= make([][]int,0)
+	mat:= make([][]int,rows)
 
 	for i:=0; i<rows;i++ {
 		// make empty slice
-		row:=make([]int, 0)
+		row:=make([]int, cols)
 
 		for j:=0; j<cols; j++ {
 			// append in slice
-			row=append(row, i*j)
+			row[j]= i*j
 		}
-		
-		mat=append(mat, row)
+
+		mat[i]= row
 	}
 
 	return mat
