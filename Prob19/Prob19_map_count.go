@@ -5,12 +5,16 @@ import "fmt"
 func getCounts(userIds []string) (userCountMap map[string]int) {
 	userCountMap = make(map[string]int)
 	for _, userId := range userIds {
-		count, ok := userCountMap[userId]
-		if ok != true {
-			userCountMap[userId] = 1
-		} else {
-			userCountMap[userId] = count + 1
-		}
+		// count, ok := userCountMap[userId]
+		// if ok != true {
+		// 	userCountMap[userId] = 1
+		// } else {
+		// 	userCountMap[userId] = count + 1
+		// }
+
+		// another way to do since count will take default value i.e.0
+		count := userCountMap[userId]
+		userCountMap[userId] = count + 1
 	}
 	// get counts
 	return userCountMap
