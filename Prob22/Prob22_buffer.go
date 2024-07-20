@@ -1,7 +1,7 @@
 package main 
 
 func addEmailToQueue(emails []string ) chan string {
-	emailsToSend := make(chan string)
+	emailsToSend := make(chan string,100)
 
 	for _,email :=range emails {
 		emailsToSend <- email
