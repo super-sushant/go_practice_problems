@@ -10,11 +10,25 @@ func main(){
 }
 
 func saveBackups(snapshotTicker,saveAfter <-chan time.Time) {
-	
+	for {
+
+	select {
+		case <-saveAfter: 
+			saveSnapshot()
+			return
+		case <-snapshotTicker: 
+			takeSnapshot()
+		
+		default :
+			waitForData()
+			time.Sleep(500*time.Millisecond)
+	}
+}
 }
 
 func waitForData(){
-	fmt.Println("Waiting for data....")
+	fmt.Println("Nothing to do, waiting...")
+
 }
 
 func takeSnapshot(){
@@ -22,7 +36,7 @@ func takeSnapshot(){
 }
 
 func saveSnapshot(){
-	fmt.Println("Nothing to do, waiting...")
+	fmt.Println("All backups saved!")
 }
 
 func test(){
